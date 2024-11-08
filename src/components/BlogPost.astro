@@ -5,6 +5,6 @@ const { url, title, pubDate } = Astro.props
 ---
 
 <li>
-  <a href={url}>{title}</a>
+  <a href={url}>{title}</a> -
   {format(pubDate, "MMM d, yyyy")}
 </li>

@@ -22,6 +22,12 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params
 const { posts } = Astro.props
+
+posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime()
+)
 ---
 
 <BaseLayout pageTitle={tag}>
@@ -32,6 +38,7 @@ const { posts } = Astro.props
         <BlogPost
           url={post.url}
           title={post.frontmatter.title}
+          pubDate={post.frontmatter.pubDate}
         />
       ))
     }
