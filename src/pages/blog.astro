@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import BlogPost from "../components/BlogPost.astro"
+
+const allPosts = await Astro.glob("./posts/*.md")
+
+allPosts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime()
+)
+
+const pageTitle = "Blog"
+---
+
+<BaseLayout pagetTitle={pageTitle}>
+  <h1>My posts</h1>
+  <p>This is where I will post about my journey learning stuff.</p>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          pubDate={post.frontmatter.pubDate}
+        />
+      ))
+    }
+  </ul>
+</BaseLayout>

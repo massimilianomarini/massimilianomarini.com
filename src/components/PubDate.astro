@@ -1,0 +1,13 @@
+---
+import { format } from "date-fns"
+
+const { pubDate } = Astro.props
+---
+
+<p class="pub-date">{format(new Date(pubDate), "MMM d, yyyy")}</p>
+
+<style>
+  .pub-date {
+    text-transform: uppercase;
+  }
+</style>

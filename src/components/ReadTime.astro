@@ -1,0 +1,8 @@
+---
+import { getReadingTime } from "../utils/readingTime"
+
+const { content } = Astro.props
+const readTime = getReadingTime(content)
+---
+
+<p>{readTime}</p>
