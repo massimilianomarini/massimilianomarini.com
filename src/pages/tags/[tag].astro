@@ -30,8 +30,8 @@ posts.sort(
 )
 ---
 
-<BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
+<BaseLayout>
+  <h1>Posts with the "{tag}" tag</h1>
   <ul>
     {
       posts.map((post) => (
