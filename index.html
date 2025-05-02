@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>massimilianomarini.com</title>
+  <style>
+    :root {
+      --text-color: #000;
+      --background-color: #fff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-color: #e0e0e0;
+        --background-color: #000;
+      }
+    }
+
+    body {
+      color: var(--text-color);
+      background-color: var(--background-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+  </style>
 </head>
 <body>
   <p>Just another <i>in progress</i> home page! :)</p>
